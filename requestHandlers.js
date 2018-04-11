@@ -1,6 +1,7 @@
 var exec = require("child_process").exec;
 var querystring = require("querystring");
 var fs = require("fs");
+var formidable = require("formidable");
 
 function start(response) {
     console.log("request handler 'start' was called.");
@@ -9,12 +10,11 @@ function start(response) {
         '<head>'+
         '<meta http-equiv="Content-Type" content="text/html; ' +
         'charset=UTF-8 />'+
-        '</hed>'+
+        '</head>'+
         '<body>'+
         '<form action="/upload" enctype="multipart/form-data" method="post">'+
-        '<textarea name="text" rows="20" cols="60"></textarea>'+
         '<input type="file" name="upload">'+
-        '<input type="submit" value="Submit text" />'+
+        '<input type="submit" value="Upload file" />'+
         '</form>'+
         '</body>'+
         '</html>';
